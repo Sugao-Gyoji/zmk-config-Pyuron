@@ -5,64 +5,6 @@
 #include "Pyuron.dtsi"
 #include <mouse-gesture.dtsi>
 
-/* あなたの環境の実測値に基づく独自定義 gestuer_mouse用 */
-#define MG_UP    1
-#define MG_DOWN  2
-#define MG_RIGHT 8
-#define MG_LEFT  4
-
-/* ジェスチャー定義 */
-&zip_mouse_gesture {
-    status = "okay";
-    stroke-size = <100>;
-    enable-eager-mode;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <300>;
-
-    history_back {
-        pattern = <MG_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
-    };
-};
-
-/*
-&zip_mouse_gesture {
-    stroke-size = <100>;
-    input_mode_A {
-        pattern = <1>;
-        bindings = <&kp A>;
-    };
-    input_mode_2 {
-        pattern = <2>;
-        bindings = <&kp B>;
-    };
-    input_mode_3 {
-        pattern = <3>;
-        bindings = <&kp C>;
-    };
-    input_mode_4 {
-        pattern = <4>;
-        bindings = <&kp D>;
-    };
-    input_mode_5 {
-        pattern = <5>;
-        bindings = <&kp E>;
-    };
-    input_mode_6 {
-        pattern = <6>;
-        bindings = <&kp F>;
-    };
-    input_mode_7 {
-        pattern = <7>;
-        bindings = <&kp G>;
-    };
-    input_mode_8 {
-        pattern = <8>;
-        bindings = <&kp H>;
-    };
-};
-*/
-
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
