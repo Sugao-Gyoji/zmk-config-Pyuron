@@ -5,6 +5,20 @@
 #include "Pyuron.dtsi"
 #include <mouse-gesture.dtsi>
 
+/* ジェスチャー定義 */
+&zip_mouse_gesture {
+    stroke-size = <100>;
+    input_mode_ja {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp INT4>;
+    };
+    input_mode_en {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp INT5>;
+    };
+};
+
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
