@@ -34,10 +34,8 @@
         };
     };
 };
-
-/ {
     /* 1. ジェスチャーエンジンをここに定義 */
-    zip_mouse_gesture: zip_mouse_gesture {
+    &zip_mouse_gesture: zip_mouse_gesture {
         compatible = "zmk,input-processor-mouse-gesture";
         #input-processor-cells = <0>;
         status = "okay";
@@ -85,7 +83,6 @@
         device = <&trackball_L>; // 同ファイル内のセンサーを参照
         input-processors = <&zip_mouse_gesture>;
     };
-};
 
 /*
 &trackball_split_L {
