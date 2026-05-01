@@ -11,6 +11,20 @@
     quick-tap-ms = <0>;
 };
 
+/* ジェスチャー定義 */
+&zip_mouse_gesture {
+    stroke-size = <100>;
+    input_mode_ja {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp INT4>;
+    };
+    input_mode_en {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp INT5>;
+    };
+};
+
+
 / {
 // レイヤーの状態を監視する設定
     layer_listeners {
@@ -20,19 +34,6 @@
         auto_gesture_on {
             layers = <0>; 
             bindings = <&mouse_gesture_on>; // 入った時の挙動のみ指定
-        };
-    };
-
-    /* あとは通常のジェスチャー定義 */
-    &zip_mouse_gesture {
-        stroke-size = <100>;
-        input_mode_ja {
-            pattern = <GESTURE_LEFT>;
-            bindings = <&kp INT4>;
-        };
-        input_mode_en {
-            pattern = <GESTURE_RIGHT>;
-            bindings = <&kp INT5>;
         };
     };
 
