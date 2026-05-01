@@ -8,45 +8,6 @@
 
 
 
-&zip_mouse_gesture {
-    status = "okay";
-    stroke-size = <100>;
-    enable-eager-mode;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <300>;
-    history_back_A {
-        pattern = <1>;
-        bindings = <&kp A>;
-    };
-    history_back_B {
-        pattern = <2>;
-        bindings = <&kp B>;
-    };
-    history_back_C {
-        pattern = <3>;
-        bindings = <&kp C>;
-    };
-    history_back_D {
-        pattern = <4>;
-        bindings = <&kp D>;
-    };
-    history_back_E {
-        pattern = <5>;
-        bindings = <&kp E>;
-    };
-    history_back_F {
-        pattern = <6>;
-        bindings = <&kp F>;
-    };
-    history_back_G {
-        pattern = <7>;
-        bindings = <&kp G>;
-    };
-    history_back_H {
-        pattern = <8>;
-        bindings = <&kp H>;
-    };
-};
 
 
 &mt {
@@ -56,12 +17,6 @@
 
 
 / {
-
-trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball_L>; // 物理センサーを直接指定
-        input-processors = <&zip_mouse_gesture>;
-    };
 
 /*
     layer_listeners {
