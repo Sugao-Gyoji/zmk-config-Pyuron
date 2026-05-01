@@ -11,11 +11,12 @@
     enable-eager-mode;
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <300>;
-
+/*
     history_back {
         pattern = <1>;
         bindings = <&kp A>;
     };
+*/
 };
 
 &kscan0 {
