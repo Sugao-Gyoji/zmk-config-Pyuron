@@ -271,8 +271,8 @@
             >;
         };
     };
+};
 
 &trackball_L {
     input-processors = <&zip_mouse_gesture>;
-};
 };
