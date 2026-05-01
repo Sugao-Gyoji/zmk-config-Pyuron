@@ -57,6 +57,12 @@
 
 / {
 
+trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_L>; // 物理センサーを直接指定
+        input-processors = <&zip_mouse_gesture>;
+    };
+
 /*
     layer_listeners {
         compatible = "zmk,layer-listeners";
@@ -271,8 +277,4 @@
             >;
         };
     };
-};
-
-&trackball_split_L {
-    input-processors = <&zip_mouse_gesture>;
 };
