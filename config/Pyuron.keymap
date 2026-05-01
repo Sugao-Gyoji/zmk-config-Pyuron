@@ -11,8 +11,10 @@
     quick-tap-ms = <0>;
 };
 
-/*
+
 / {
+
+/*
 // レイヤーの状態を監視する設定
     layer_listeners {
         compatible = "zmk,layer-listeners";
