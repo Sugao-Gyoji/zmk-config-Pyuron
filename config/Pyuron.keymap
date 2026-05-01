@@ -6,6 +6,19 @@
 
 #define MOUSE 6
 
+
+&zip_mouse_gesture {
+    status = "okay";
+    stroke-size = <100>;
+    enable-eager-mode;
+    idle-timeout-ms = <100>;
+    gesture-cooldown-ms = <300>;
+    history_back {
+        pattern = <1>;
+        bindings = <&kp A>;
+    };
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
