@@ -67,11 +67,6 @@
         };
     };
 */
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball_L>; // 左手側のセンサーを指定
-        input-processors = <&zip_mouse_gesture>;
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -276,4 +271,8 @@
             >;
         };
     };
+
+&trackball_L {
+    input-processors = <&zip_mouse_gesture>;
+};
 };
