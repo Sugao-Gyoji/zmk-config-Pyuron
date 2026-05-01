@@ -1,9 +1,9 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <mouse-gesture.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include "Pyuron.dtsi"
-#include <mouse-gesture.dtsi>
 
 &zip_mouse_gesture {
     status = "okay";
@@ -11,12 +11,10 @@
     enable-eager-mode;
     idle-timeout-ms = <100>;
     gesture-cooldown-ms = <300>;
-/*
     history_back {
         pattern = <1>;
         bindings = <&kp A>;
     };
-*/
 };
 
 &kscan0 {
