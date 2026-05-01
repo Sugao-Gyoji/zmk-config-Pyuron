@@ -12,13 +12,16 @@
 #define MG_LEFT  4
 
 /* ジェスチャー定義 */
-/*
 &zip_mouse_gesture {
     stroke-size = <100>;
-    input_mode_1 {
+    input_mode_A {
         pattern = <1>;
         bindings = <&kp A>;
     };
+};
+
+
+/*
     input_mode_2 {
         pattern = <2>;
         bindings = <&kp B>;
