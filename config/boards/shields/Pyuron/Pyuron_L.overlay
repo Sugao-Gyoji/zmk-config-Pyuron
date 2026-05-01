@@ -34,10 +34,64 @@
     };
 };
 
+/ {
+    /* 1. ジェスチャーエンジンをここに定義 */
+    zip_mouse_gesture: zip_mouse_gesture {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        status = "okay";
+        stroke-size = <100>;
+        idle-timeout-ms = <100>;
+        gesture-cooldown-ms = <300>;
+    history_back_A {
+        pattern = <1>;
+        bindings = <&kp A>;
+    };
+    history_back_B {
+        pattern = <2>;
+        bindings = <&kp B>;
+    };
+    history_back_C {
+        pattern = <3>;
+        bindings = <&kp C>;
+    };
+    history_back_D {
+        pattern = <4>;
+        bindings = <&kp D>;
+    };
+    history_back_E {
+        pattern = <5>;
+        bindings = <&kp E>;
+    };
+    history_back_F {
+        pattern = <6>;
+        bindings = <&kp F>;
+    };
+    history_back_G {
+        pattern = <7>;
+        bindings = <&kp G>;
+    };
+    history_back_H {
+        pattern = <8>;
+        bindings = <&kp H>;
+    };
+
+    };
+
+    /* 2. リスナーをここに定義（左手ビルド時のみ読み込まれる） */
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_L>; // 同ファイル内のセンサーを参照
+        input-processors = <&zip_mouse_gesture>;
+    };
+};
+
+/*
 &trackball_split_L {
     device = <&trackball_L>;
-//    input-processors = <&zip_mouse_gesture>;
+    input-processors = <&zip_mouse_gesture>;
 };
+*/
 
 &spi0 {
     status = "okay";
