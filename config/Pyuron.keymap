@@ -51,6 +51,101 @@
 
 / {
     behaviors {
+        dot_arrow: dot_arrow {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        // シングルタップと長押しを設定
+
+        hold_stap: hold_single_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_SINGLE_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // シングルタップでint5、ダブルタップでint4、長押しで左alt
+
+        td_alt_int5_4: tap_dance_alt_int5_int4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_INT5_INT4";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&hold_stap LALT INT5>, <&kp INT4>;
+        };
+
+        // シングルタップでシングルクォート、ダブルタップでダブルクォート、長押しで左shift
+
+        td_sft_sq_dq: tap_dance_singlequote_doublequote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SHT_SQ_DQ";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&hold_stap LSHIFT SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+        };
+
+        td_bracket: tap_dance_bracket {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BRACKET";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+        };
+
+        td_par: tap_dance_par {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+
+        td_brace: tap_dance_brace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BRACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+        };
+
+        td_exc_hash: tap_exclametion_hash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_EXC_HASHE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp EXCLAMATION>, <&kp HASH>;
+        };
+
+        td_at_amps: tap_at_mps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_AT_AMPS";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp AT>, <&kp AMPS>;
+        };
+
+        td_dol_par: tap_dollar_parcent {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DOL_PAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp DOLLAR>, <&kp PERCENT>;
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // 500msから200ms程度に下げると快適です
+            quick-tap-ms = <150>;       // 素早い連打を「タップ」として固定
+            flavor = "tap-preferred";   // 迷ったら「タップ」を優先する設定
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
