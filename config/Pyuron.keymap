@@ -6,19 +6,6 @@
 
 #define MOUSE 6
 
-
-&zip_mouse_gesture {
-    status = "okay";
-    stroke-size = <100>;
-    enable-eager-mode;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <300>;
-    history_back {
-        pattern = <1>;
-        bindings = <&kp A>;
-    };
-};
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -28,14 +15,12 @@
 / {
 
 /*
-// レイヤーの状態を監視する設定
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        // レイヤー0（デフォルト）に入った瞬間に、ジェスチャーをONにする
         auto_gesture_on {
             layers = <0>; 
-            bindings = <&mouse_gesture_on>; // 入った時の挙動のみ指定
+            bindings = <&mouse_gesture_on>;
         };
     };
 */
