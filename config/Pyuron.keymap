@@ -6,31 +6,12 @@
 
 #define MOUSE 6
 
-/* あなたの環境の実測値に基づく独自定義 gestuer_mouse用 */
-#define MG_UP    1
-#define MG_DOWN  2
-#define MG_RIGHT 8
-#define MG_LEFT  4
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
 
-/* ジェスチャー定義 */
-&zip_mouse_gesture {
-    stroke-size = <100>;
-    input_mode_ja {
-        pattern = <MG_LEFT>;
-        bindings = <&kp INT4>;
-    };
-    input_mode_en {
-        pattern = <MG_RIGHT>;
-        bindings = <&kp INT5>;
-    };
-};
-
-
+/*
 / {
 // レイヤーの状態を監視する設定
     layer_listeners {
@@ -42,6 +23,7 @@
             bindings = <&mouse_gesture_on>; // 入った時の挙動のみ指定
         };
     };
+*/
 
     combos {
         compatible = "zmk,combos";
