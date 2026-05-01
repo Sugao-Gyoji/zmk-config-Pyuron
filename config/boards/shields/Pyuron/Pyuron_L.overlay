@@ -75,7 +75,7 @@
     };
 
     /* 2. リスナーをここに定義（左手ビルド時のみ読み込まれる） */
-    &trackball_listener {
+    &trackball_listener_L {
         compatible = "zmk,input-listener";
         device = <&trackball_L>; // 同ファイル内のセンサーを参照
         input-processors = <&zip_mouse_gesture>;
