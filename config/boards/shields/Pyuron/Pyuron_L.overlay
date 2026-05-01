@@ -12,6 +12,7 @@
 #define MG_LEFT  4
 
 /* ジェスチャー定義 */
+/*
 &zip_mouse_gesture {
     stroke-size = <100>;
     input_mode_1 {
@@ -48,7 +49,7 @@
     };
 
 };
-
+*/
 
 &kscan0 {
         col-gpios
@@ -81,7 +82,7 @@
 
 &trackball_split_L {
     device = <&trackball_L>;
-    input-processors = <&zip_mouse_gesture>;
+//    input-processors = <&zip_mouse_gesture>;
 };
 
 &spi0 {
