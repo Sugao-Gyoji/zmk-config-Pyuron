@@ -13,15 +13,25 @@
 
 /* ジェスチャー定義 */
 &zip_mouse_gesture {
+    status = "okay";
+    stroke-size = <100>;
+    enable-eager-mode;
+    idle-timeout-ms = <100>;
+    gesture-cooldown-ms = <300>;
+
+    history_back {
+        pattern = <MG_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+};
+
+/*
+&zip_mouse_gesture {
     stroke-size = <100>;
     input_mode_A {
         pattern = <1>;
         bindings = <&kp A>;
     };
-};
-
-
-/*
     input_mode_2 {
         pattern = <2>;
         bindings = <&kp B>;
@@ -50,7 +60,6 @@
         pattern = <8>;
         bindings = <&kp H>;
     };
-
 };
 */
 
