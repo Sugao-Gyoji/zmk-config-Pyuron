@@ -3,6 +3,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include "Pyuron.dtsi"
+#include <mouse-gesture.dtsi>
 
 &kscan0 {
         col-gpios
@@ -35,6 +36,7 @@
 
 &trackball_split_L {
     device = <&trackball_L>;
+    input-processors = <&zip_mouse_gesture>;
 };
 
 &spi0 {
