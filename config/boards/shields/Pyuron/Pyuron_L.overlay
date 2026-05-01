@@ -34,10 +34,7 @@
         };
     };
 };
-    /* 1. ジェスチャーエンジンをここに定義 */
-    &zip_mouse_gesture: zip_mouse_gesture {
-        compatible = "zmk,input-processor-mouse-gesture";
-        #input-processor-cells = <0>;
+    &zip_mouse_gesture {
         status = "okay";
         stroke-size = <100>;
         idle-timeout-ms = <100>;
@@ -78,7 +75,7 @@
     };
 
     /* 2. リスナーをここに定義（左手ビルド時のみ読み込まれる） */
-    trackball_listener {
+    &trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_L>; // 同ファイル内のセンサーを参照
         input-processors = <&zip_mouse_gesture>;
