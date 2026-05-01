@@ -5,20 +5,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "Pyuron.dtsi"
 
-
-
-&zip_mouse_gesture {
-    status = "okay";
-    stroke-size = <100>;
-    enable-eager-mode;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <300>;
-    history_back {
-        pattern = <1>;
-        bindings = <&kp A>;
-    };
-};
-
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
