@@ -44,7 +44,7 @@
     device = <&trackball_R>;
     scroller {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
+        input-processors = <&zip_mouse_gesture>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
     };
 };
 
