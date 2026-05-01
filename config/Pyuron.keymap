@@ -273,6 +273,6 @@
     };
 };
 
-&trackball_L {
+&trackball_split_L {
     input-processors = <&zip_mouse_gesture>;
 };
