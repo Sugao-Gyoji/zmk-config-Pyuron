@@ -14,14 +14,39 @@
 /* ジェスチャー定義 */
 &zip_mouse_gesture {
     stroke-size = <100>;
-    input_mode_ja {
-        pattern = <MG_LEFT>;
-        bindings = <&kp INT4>;
+    input_mode_1 {
+        pattern = <1>;
+        bindings = <&kp A>;
     };
-    input_mode_en {
-        pattern = <MG_RIGHT>;
-        bindings = <&kp INT5>;
+    input_mode_2 {
+        pattern = <2>;
+        bindings = <&kp B>;
     };
+    input_mode_3 {
+        pattern = <3>;
+        bindings = <&kp C>;
+    };
+    input_mode_4 {
+        pattern = <4>;
+        bindings = <&kp D>;
+    };
+    input_mode_5 {
+        pattern = <5>;
+        bindings = <&kp E>;
+    };
+    input_mode_6 {
+        pattern = <6>;
+        bindings = <&kp F>;
+    };
+    input_mode_7 {
+        pattern = <7>;
+        bindings = <&kp G>;
+    };
+    input_mode_8 {
+        pattern = <8>;
+        bindings = <&kp H>;
+    };
+
 };
 
 
