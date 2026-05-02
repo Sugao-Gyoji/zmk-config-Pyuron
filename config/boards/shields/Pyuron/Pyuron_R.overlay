@@ -6,6 +6,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include "Pyuron.dtsi"
 
+/* あなたの環境の実測値に基づく独自定義 gestuer_mouse用 */
+#define MG_UP    1
+#define MG_DOWN  2
+#define MG_RIGHT 8
+#define MG_LEFT  4
+
+
 &default_transform {
     col-offset = <6>;
 };
@@ -47,6 +54,7 @@
         stroke-size = <100>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <300>;
+        exit-after-clear-input-processors;
     history_back_A {
         pattern = <1>;
         bindings = <&kp A>;
@@ -89,7 +97,7 @@
      //         compatible = "zmk,input-listener";
                 device = <&trackball_split_L>;
                 input-processors = 
-                        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
                         <&zip_mouse_gesture>;
                 scroller {
                         layers = <5>;
