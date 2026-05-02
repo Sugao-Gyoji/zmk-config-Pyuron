@@ -74,12 +74,19 @@
 
     };
 
-    /* 2. リスナーをここに定義（左手ビルド時のみ読み込まれる） */
-    &trackball_listener_L {
+    /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
+&trackball_listener_L {
+        status = "okay";
         compatible = "zmk,input-listener";
-        device = <&trackball_L>; // 同ファイル内のセンサーを参照
-        input-processors = <&zip_mouse_gesture>;
-    };
+        device = <&trackball_L>;
+        input-processors = 
+                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_mouse_gesture>;
+        scroller {
+                layers = <5>;
+                input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
+        };
+};
 
 &trackball_split_L {
     device = <&trackball_L>;
