@@ -23,7 +23,7 @@
 
         auto_gesture_on {
             layers = <0>; 
-            bindings = <&mouse_gesture_on>;
+            bindings = <&mouse_gesture_on &none>;
         };
     };
 
