@@ -35,7 +35,6 @@
     };
 };
 
-/ {
     &zip_mouse_gesture {
         status = "okay";
         stroke-size = <100>;
@@ -75,19 +74,19 @@
     };
 
     };
-
+/ {
     /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
-    trackball_listener_L: trackball_listener_L {
-        status = "okay";
-        compatible = "zmk,input-listener";
-        device = <&trackball_L>;
-        input-processors = 
-                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-                <&zip_mouse_gesture>;
-        scroller {
-                layers = <5>;
-                input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
-        };
+        trackball_listener_L: trackball_listener_L {
+                status = "okay";
+                compatible = "zmk,input-listener";
+                device = <&trackball_L>;
+                input-processors = 
+                        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                        <&zip_mouse_gesture>;
+                scroller {
+                        layers = <5>;
+                        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
+                };
         };
 };
 
