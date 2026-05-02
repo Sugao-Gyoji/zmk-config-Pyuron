@@ -46,7 +46,6 @@
 
     &zip_mouse_gesture {
         status = "okay";
-        target-listener = <&trackball_listener_L>;
         stroke-size = <100>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <300>;
