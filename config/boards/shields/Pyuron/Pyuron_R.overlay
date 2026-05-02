@@ -46,6 +46,7 @@
 
     &zip_mouse_gesture {
         status = "okay";
+        target-listener = <&trackball_listener_L>;
         stroke-size = <100>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <300>;
@@ -67,8 +68,7 @@
                 device = <&trackball_split_L>;
                 input-processors = 
                 <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-                        <&zip_mouse_gesture>,
-                        <&zip_temp_layer 5 10>;
+                        <&zip_mouse_gesture>;
                 scroller {
                         layers = <5>;
                         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
