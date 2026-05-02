@@ -54,7 +54,7 @@
         stroke-size = <100>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <300>;
-        exit-after-clear-input-processors;
+        clear-input-processors;
     history_back_A {
         pattern = <1>;
         bindings = <&kp A>;
