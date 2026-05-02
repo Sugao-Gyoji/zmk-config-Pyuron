@@ -95,12 +95,12 @@
                 };
         };
 
-
+/*
 &trackball_split_L {
         device = <&trackball_listener_L>;
  //   input-processors = <&zip_mouse_gesture>;
 };
-
+*/
 
 
 &trackball_listener_R {
