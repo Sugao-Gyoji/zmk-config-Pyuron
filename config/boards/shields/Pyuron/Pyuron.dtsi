@@ -24,6 +24,7 @@ split_inputs {
       };
     };
 
+/*
     trackball_listener_L: trackball_listener_L {
       compatible = "zmk,input-listener";
       status = "disabled";
@@ -34,6 +35,7 @@ split_inputs {
             <&zip_scroll_scaler 1 5>,
             <&zip_xy_to_scroll_mapper>;
     };
+*/
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
