@@ -35,6 +35,11 @@
     };
 };
 
+&trackball_split_L {
+    device = <&trackball_L>;
+    input = <&trackball_L>;
+};
+
 
 &spi0 {
     status = "okay";
