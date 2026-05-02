@@ -75,7 +75,7 @@
     };
 
     /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
-&trackball_listener_L {
+    trackball_listener_L: trackball_listener_L {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball_L>;
