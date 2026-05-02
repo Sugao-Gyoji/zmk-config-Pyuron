@@ -78,10 +78,10 @@
     /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
         &trackball_listener_L {
                 status = "okay";
-                compatible = "zmk,input-listener";
+     //         compatible = "zmk,input-listener";
                 device = <&trackball_L>;
                 input-processors = 
-                        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+                        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                         <&zip_mouse_gesture>;
                 scroller {
                         layers = <5>;
@@ -91,7 +91,7 @@
 
 
 &trackball_split_L {
-    device = <&trackball_L>;
+        device = <&trackball_listener_L>;
  //   input-processors = <&zip_mouse_gesture>;
 };
 
