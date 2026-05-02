@@ -44,57 +44,26 @@
     };
 };
 
-/*
-&trackball_listener_L {
-    status = "okay";
-};
-*/
     &zip_mouse_gesture {
         status = "okay";
         stroke-size = <100>;
         idle-timeout-ms = <100>;
         gesture-cooldown-ms = <300>;
 
-    history_back_A {
-        pattern = <1>;
-        bindings = <&kp A>;
-    };
-    history_back_B {
-        pattern = <2>;
-        bindings = <&kp B>;
-    };
-    history_back_C {
-        pattern = <3>;
-        bindings = <&kp C>;
-    };
-    history_back_D {
-        pattern = <4>;
-        bindings = <&kp D>;
-    };
-    history_back_E {
-        pattern = <5>;
-        bindings = <&kp E>;
-    };
-    history_back_F {
-        pattern = <6>;
-        bindings = <&kp F>;
-    };
-    history_back_G {
-        pattern = <7>;
-        bindings = <&kp G>;
-    };
-    history_back_H {
-        pattern = <8>;
-        bindings = <&kp H>;
-    };
-
+        change_int4 {
+            pattern = <MG_LEFT>;
+            bindings = <&kp INT4>;
+        };
+        change_int5 {
+            pattern = <MG_RIGHT>;
+            bindings = <&kp INT5>;
+        };
     };
 
 
     /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
         &trackball_listener_L {
                 status = "okay";
-     //         compatible = "zmk,input-listener";
                 device = <&trackball_split_L>;
                 input-processors = 
                 <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
@@ -104,13 +73,6 @@
                         input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
                 };
         };
-
-/*
-&trackball_split_L {
-        device = <&trackball_listener_L>;
- //   input-processors = <&zip_mouse_gesture>;
-};
-*/
 
 
 &trackball_listener_R {
