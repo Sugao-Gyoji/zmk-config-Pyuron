@@ -12,7 +12,6 @@
 #define MG_RIGHT 8
 #define MG_LEFT  4
 
-
 &default_transform {
     col-offset = <6>;
 };
@@ -44,21 +43,22 @@
     };
 };
 
-    &zip_mouse_gesture {
-        status = "okay";
-        stroke-size = <100>;
-        idle-timeout-ms = <100>;
-        gesture-cooldown-ms = <300>;
+&zip_mouse_gesture {
+    status = "okay";
+    stroke-size = <100>;
+    idle-timeout-ms = <100>;
+    gesture-cooldown-ms = <300>;
 
-        change_int4 {
-            pattern = <MG_LEFT>;
-            bindings = <&kp INT4>;
-        };
-        change_int5 {
-            pattern = <MG_RIGHT>;
-            bindings = <&kp INT5>;
-        };
+    change_int4 {
+        pattern = <MG_LEFT>;
+        bindings = <&kp INT4>;
     };
+    change_int5 {
+        pattern = <MG_RIGHT>;
+        bindings = <&kp INT5>;
+    };
+};
+
 / {
     zip_keybind_ime: zip_keybind_ime {
         compatible = "zmk,input-processor-keybind";
@@ -71,9 +71,8 @@
         // 2: 左（文節移動）
         // 3: 上（文節を短縮）
         // 4: 下（文節を伸長）
-        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp SHIFT(LEFT)>, <&kp SHIFT(RIGHT)>;
-
-        tick = <60>;   // 1入力あたりの回転量。好みで40〜100で調整。
+        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(RIGHT)>;
+        tick = <60>;   // 1入力あたりの回転量
         tap-ms = <20>;
     };
 };
@@ -83,20 +82,21 @@
     status = "okay";
     device = <&trackball_split_L>;
     input-processors = 
-    <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-                        <&zip_mouse_gesture>;
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+        <&zip_mouse_gesture>;
+
     zip_keybind {
         layers = <1>; 
         input-processors = <&zip_keybind_ime>;
     };
+
     scroller {
-        layers = <6>;
+        layers = <5>;
         input-processors = <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
     };
 };
-
 
 &trackball_listener_R {
     status = "okay";
