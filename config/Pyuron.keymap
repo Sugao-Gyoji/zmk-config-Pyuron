@@ -58,6 +58,117 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+// 日本語入力モードへ (全角/変換キー + ジェスチャーON)
+        ime_zen: ime_zen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&kp INT4>
+                , <&mouse_gesture_on>;
+        };
+
+        // 英語入力モードへ (無変換キー + ジェスチャーOFF)
+        ime_han: ime_han {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&kp INT5>
+                , <&mouse_gesture_off>;
+        };
+        macro_sus: macro_sus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT5 &kp N0 &kp N1 &kp F &kp U &kp N0 &kp N0 &kp N1>;
+            label = "MACRO_SUS";
+        };
+
+        macro_bsp: macro_bsp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp F &kp U &kp N0 &kp N0 &kp N2>;
+            label = "MACRO_BSP";
+        };
+
+        macro_al: macro_al {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp F &kp U &kp N0 &kp N0 &kp N4>;
+            label = "MACRO_AL";
+        };
+
+        macro_film: macroLfilm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp F &kp U &kp N0 &kp N0 &kp NUMBER_6>;
+            label = "MACROLFILM";
+        };
+
+        macro_seal: macro_seal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp S &kp E &kp N0 &kp N0 &kp N3>;
+            label = "MACRO_SEAL";
+        };
+
+        macro_acrylic: macro_acrylic {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp A &kp K &kp N0 &kp N0 &kp N1>;
+            label = "MACRO_ACRYLIC";
+        };
+
+        macro_trans: macro_trans {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp U &kp N &kp N0 &kp N0 &kp N1>;
+            label = "MACRO_TRANS";
+        };
+
+        macro_mv_uriage: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp LA(U) &kp C>;
+            label = "NEW_MACRO";
+        };
+
+        macro_mv_jyutyu: macro_jyutyu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp LA(U) &kp B>;
+            label = "MACRO_JYUTYU";
+        };
+
+        macro_mv_mitumori: macro_mitumori {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp LA(U) &kp A>;
+            label = "MACRO_MITUMORI";
+        };
+
+        macro_oder_num: macro_oder_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp N0 &kp N0 &kp N0 &kp N0 &kp N1>;
+            label = "MACRO_ODER_NUM";
+        };
+
+        macro_const_num: macro_const_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp N0 &kp N0 &kp N0 &kp N0 &kp N2>;
+            label = "MACRO_CONST_NUM";
+        };
+
+        macro_draw_num: macro_draw_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INTERNATIONAL_5 &kp N0 &kp N1 &kp N0 &kp N0 &kp N0 &kp N0 &kp N7>;
+            label = "MACRO_DRAW_NUM";
+        };
     };
 
     lt_to_layer_0: lt_to_layer_0 {
