@@ -64,24 +64,18 @@
                 <&kp LALT>;
         };
 
-        // 日本語入力モードへ (全角/変換キー + ジェスチャーON)
-
-        ime_zen: ime_zen {
+// 全角：変換キー + IMEレイヤーへ
+         ime_zen: ime_zen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp INT4 &mouse_gesture_on>;
+            bindings = <&kp INT4 &to 1>; 
         };
 
-        // 英語入力モードへ (無変換キー + ジェスチャーOFF)
-
+// 半角：無変換キー + デフォルトレイヤーへ
         ime_han: ime_han {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <20>; // 少し長めに
-            tap-ms = <20>;
-            bindings = <&kp INT5 &mouse_gesture_off>; // 無変換を送った後に確実にOFFにする
+            bindings = <&kp INT5 &to 0>; 
         };
 
         macro_sus: macro_sus {
