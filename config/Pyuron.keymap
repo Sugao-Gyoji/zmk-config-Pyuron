@@ -6,6 +6,13 @@
 
 #define MOUSE 6
 
+/* mouse-gesture の挙動を補完する設定 */
+&mouse_gesture_kp {
+    tapping-term-ms = <300>;
+    quick-tap-ms = <175>;
+    flavor = "tap-preferred";
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -285,7 +292,7 @@
         default_layer {
             bindings = <
 &mt LWIN Q        &kp W            &kp E   &kp R   &kp T        &kp Y       &kp U            &kp I        &kp O          &kp P
-&hm LCTRL A       &kp S            &kp D   &kp F   &kp G        &kp H       &kp J            &kp K        &lt 6 L        &mt RCTRL MINUS
+&hm LCTRL A       &kp S            &kp D   &kp F   &kp G        &kp H       &mouse_gesture_kp 0 J            &kp K        &lt 6 L        &mt RCTRL MINUS
 &mt LEFT_SHIFT Z  &kp X            &kp C   &kp V   &kp B        &kp DELETE  &trans           &kp N        &kp M          &kp COMMA
 &kp DOT           &mt RSHFT SLASH  &trans  &trans  &lt 2 SPACE  &mkp MB1    &lt 4 BACKSPACE  &lt 3 ENTER  &kp RIGHT_ALT  &kp DEL
             >;
