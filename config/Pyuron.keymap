@@ -47,38 +47,41 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
         alt_grave: alt_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp GRAVE>
-                , <&macro_release &kp LALT>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>;
         };
-// 日本語入力モードへ (全角/変換キー + ジェスチャーON)
+
+        // 日本語入力モードへ (全角/変換キー + ジェスチャーON)
+
         ime_zen: ime_zen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings
-                = <&kp INT4>
-                , <&mouse_gesture_on>;
+            bindings = <&kp INT4 &mouse_gesture_on>;
         };
 
         // 英語入力モードへ (無変換キー + ジェスチャーOFF)
+
         ime_han: ime_han {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings
-                = <&kp INT5>
-                , <&mouse_gesture_off>;
+            bindings = <&kp INT5 &mouse_gesture_off>;
         };
+
         macro_sus: macro_sus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -297,7 +300,7 @@
 &kp F9           &kp F10  &kp F11  &kp F12  &kp ESCAPE  &kp ESCAPE  &kp HOME        &kp UP_ARROW    &kp END            &kp LG(LC(O))
 &kp F5           &kp F6   &kp F7   &kp F8   &kp LC(V)   &trans      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW    &trans
 &kp F1           &kp F2   &kp F3   &kp F4   &kp LC(C)   &kp LC(X)   &trans          &trans          &kp C_VOLUME_DOWN  &kp K_MUTE
-&kp C_VOLUME_UP  &trans   &trans   &trans   &trans      &trans      &trans          &alt_grave    &trans             &trans
+&kp C_VOLUME_UP  &trans   &trans   &trans   &trans      &trans      &ime_han        &ime_zen        &trans             &trans
             >;
         };
 
@@ -312,10 +315,10 @@
 
         CUSTOM {
             bindings = <
-&kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)  &kp LA(NUMBER_5)  &trans  &trans          &kp UP_ARROW  &trans           &trans
-&trans            &trans            &trans            &trans            &kp LC(INS)       &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
-&trans            &trans            &trans            &trans            &kp LC(DELETE)    &trans  &trans          &trans        &trans           &trans
-&trans            &trans            &trans            &trans            &trans            &trans  &trans          &trans        &trans           &trans
+&kp LA(NUMBER_1)  &kp LA(NUMBER_2)  &kp LA(NUMBER_3)  &kp LA(NUMBER_4)    &kp LA(NUMBER_5)  &trans  &macro_oder_num  &macro_const_num  &macro_draw_num  &trans
+&trans            &macro_mv_uriage  &macro_mv_jyutyu  &macro_mv_mitumori  &kp LC(INS)       &trans  &macro_sus       &macro_bsp        &macro_al        &macro_film
+&trans            &trans            &trans            &trans              &kp LC(DELETE)    &trans  &trans           &trans            &macro_trans     &macro_seal
+&macro_acrylic    &trans            &trans            &trans              &trans            &trans  &trans           &trans            &trans           &trans
             >;
         };
 
