@@ -92,7 +92,8 @@
     zip_keybind {
         layers = <1>; 
         input-processors = 
-                           <&zip_keybind_ime>;
+                           <&zip_keybind_ime>,
+                           <&zip_xy_scaler 1 100>;
                        
     };
 
@@ -110,7 +111,7 @@
     device = <&trackball_R>;
 // 【重要】右側でもマウスを動かすための基本設定を追加
     // もしこれでも向きが逆なら、ここにある SWAP や INVERT を外すなどして調整します
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
                        <&zip_mouse_gesture>;
 
     scroller {
