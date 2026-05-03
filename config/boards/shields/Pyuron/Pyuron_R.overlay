@@ -73,7 +73,7 @@
         // 3: 右（文節右移動）
         // 4: 左（文節左移動）
         bindings = <&kp LS(RIGHT)>, <&kp LS(LEFT)>, <&kp RIGHT>, <&kp LEFT>;
-        tick = <60>;   // 1入力あたりの回転量
+        tick = <1>;   // 1入力あたりの回転量
         tap-ms = <20>;
     };
 };
@@ -88,14 +88,14 @@
 
     zip_keybind {
         layers = <1>; 
-        input-processors = <&zip_xy_scaler 0 1>,
+        input-processors = <&zip_xy_scaler 1 100>,
                            <&zip_keybind_ime>,
                            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
     };
 
     scroller {
         layers = <6>;
-        input-processors = <&zip_xy_scaler 0 1>, // スクロール中もカーソルを止める
+        input-processors = <&zip_xy_scaler 1 100>,
                            <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
@@ -107,15 +107,14 @@
     device = <&trackball_R>;
 // 【重要】右側でもマウスを動かすための基本設定を追加
     // もしこれでも向きが逆なら、ここにある SWAP や INVERT を外すなどして調整します
-    input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-        <&zip_mouse_gesture>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
+                       <&zip_mouse_gesture>;
 
     scroller {
         layers = <6>;
         input-processors = <&zip_xy_scaler 0 1>, // スクロール中もカーソルを止める
                            <&zip_xy_to_scroll_mapper>, 
-                           <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
+                           <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
                            <&zip_scroll_scaler 1 15>;
     };
 };
