@@ -87,13 +87,13 @@
     device = <&trackball_split_L>;
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+        <&zip_xy_scaler 1 255 { layers = <1>; }>,
         <&zip_mouse_gesture>;
 
     zip_keybind {
         layers = <1>; 
         input-processors = 
-                           <&zip_keybind_ime>,
-                           <&zip_xy_scaler 1 1000>;
+                           <&zip_keybind_ime>;
                        
     };
 
