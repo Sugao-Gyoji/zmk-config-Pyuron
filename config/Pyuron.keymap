@@ -77,11 +77,13 @@
         // 英語入力モードへ (無変換キー + ジェスチャーOFF)
 
         ime_han: ime_han {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp INT5 &mouse_gesture_off>;
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <20>; // 少し長めに
+        tap-ms = <20>;
+        bindings 
+            = <&kp INT5>
+            , <&mouse_gesture_off>; // 無変換を送った後に確実にOFFにする
         };
 
         macro_sus: macro_sus {
