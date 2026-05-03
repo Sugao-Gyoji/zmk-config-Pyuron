@@ -12,6 +12,7 @@
 };
 
 / {
+/*
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
@@ -20,6 +21,7 @@
             bindings = <&mouse_gesture_on &none>;
         };
     };
+*/
 
     combos {
         compatible = "zmk,combos";
