@@ -59,29 +59,50 @@
             bindings = <&kp INT5>;
         };
     };
+/ {
+    zip_keybind_ime: zip_keybind_ime {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        track_remainders;
+        mode = <1>; // 4方向モード
 
+        // 上下左右の割り当て
+        // 1: 右（文節移動）
+        // 2: 左（文節移動）
+        // 3: 上（文節を短縮）
+        // 4: 下（文節を伸長）
+        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp SHIFT(LEFT)>, <&kp SHIFT(RIGHT)>;
 
-    /* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
-        &trackball_listener_L {
-                status = "okay";
-                device = <&trackball_split_L>;
-                input-processors = 
-                <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+        tick = <60>;   // 1入力あたりの回転量。好みで40〜100で調整。
+        tap-ms = <20>;
+    };
+};
+
+/* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
+&trackball_listener_L {
+    status = "okay";
+    device = <&trackball_split_L>;
+    input-processors = 
+    <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
                         <&zip_mouse_gesture>;
-                scroller {
-                        layers = <5>;
-                        input-processors = <&zip_xy_to_scroll_mapper>, 
-                                           <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
-                                           <&zip_scroll_scaler 1 15>;
-                };
-        };
+    zip_keybind {
+        layers = <1>; 
+        input-processors = <&zip_keybind_ime>;
+    };
+    scroller {
+        layers = <6>;
+        input-processors = <&zip_xy_to_scroll_mapper>, 
+                           <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
+                           <&zip_scroll_scaler 1 15>;
+    };
+};
 
 
 &trackball_listener_R {
     status = "okay";
     device = <&trackball_R>;
     scroller {
-        layers = <5>;
+        layers = <6>;
         input-processors = <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
