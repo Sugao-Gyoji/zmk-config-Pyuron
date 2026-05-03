@@ -70,7 +70,9 @@
                         <&zip_mouse_gesture>;
                 scroller {
                         layers = <5>;
-                        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
+                        input-processors = <&zip_xy_to_scroll_mapper>, 
+                                           <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
+                                           <&zip_scroll_scaler 1 15>;
                 };
         };
 
@@ -80,7 +82,9 @@
     device = <&trackball_R>;
     scroller {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 15>;
+        input-processors = <&zip_xy_to_scroll_mapper>, 
+                           <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
+                           <&zip_scroll_scaler 1 15>;
     };
 };
 
