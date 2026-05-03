@@ -68,11 +68,11 @@
         mode = <1>; // 4方向モード
 
         // 上下左右の割り当て
-        // 1: 右（文節移動）
-        // 2: 左（文節移動）
-        // 3: 上（文節を短縮）
-        // 4: 下（文節を伸長）
-        bindings = <&kp RIGHT>, <&kp LEFT>, <&kp LS(LEFT)>, <&kp LS(RIGHT)>;
+        // 1: 下（文節を伸長）
+        // 2: 上（文節を短縮）
+        // 3: 右（文節右移動）
+        // 4: 左（文節左移動）
+        bindings = <&kp LS(RIGHT)>, <&kp LS(LEFT)>, <&kp RIGHT>, <&kp LEFT>;
         tick = <60>;   // 1入力あたりの回転量
         tap-ms = <20>;
     };
@@ -88,11 +88,12 @@
 
     zip_keybind {
         layers = <1>; 
-        input-processors = <&zip_keybind_ime>;
+        input-processors = <&zip_keybind_ime>,
+                           <&zip_xy_scaler 0 1>;
     };
 
     scroller {
-        layers = <5>;
+        layers = <6>;
         input-processors = <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
@@ -102,13 +103,47 @@
 &trackball_listener_R {
     status = "okay";
     device = <&trackball_R>;
+ /* 通常時はジェスチャーのみ（常時発動を防止） */
+    input-processors = <&zip_mouse_gesture>;
+
     scroller {
         layers = <6>;
-        input-processors = <&zip_xy_to_scroll_mapper>, 
+        input-processors = <&zip_mouse_gesture>,
+                           <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
     };
 };
+
+&zip_mouse_gesture {
+    status = "okay";
+    stroke-size = <100>;
+    enable-eager-mode;
+    idle-timeout-ms = <100>;
+    gesture-cooldown-ms = <300>;
+
+    history_back {
+        pattern = <MG_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <MG_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <MG_DOWN MG_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <MG_DOWN MG_LEFT>;
+        bindings = <&kp LC(T)>;
+    };
+};
+
+
 
 &spi0 {
     status = "okay";
