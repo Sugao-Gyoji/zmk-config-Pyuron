@@ -76,7 +76,7 @@
         // 3: 右（文節右移動）
         // 4: 左（文節左移動）
         bindings = <&kp LS(RIGHT)>, <&kp LS(LEFT)>, <&kp RIGHT>, <&kp LEFT>;
-        tick = <200>;   // 1入力あたりの回転量
+        tick = <100>;   // 1入力あたりの回転量
         tap-ms = <20>;
     };
 };
@@ -86,7 +86,7 @@
     status = "okay";
     device = <&trackball_split_L>;
     input-processors = 
-        <&zip_xy_scaler 1 10>,
+        <&zip_xy_scaler 1 5>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
         <&zip_mouse_gesture>;
 
@@ -98,6 +98,7 @@
     scroller {
         layers = <6>;
         input-processors = 
+                           <&zip_xy_scaler 1 20>,
                            <&zip_xy_to_scroll_mapper>, 
                            <&zip_scroll_transform INPUT_TRANSFORM_XY_SWAP>,
                            <&zip_scroll_scaler 1 15>;
