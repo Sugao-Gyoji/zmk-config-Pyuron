@@ -76,7 +76,7 @@
         // 3: 右（文節右移動）
         // 4: 左（文節左移動）
         bindings = <&kp LS(RIGHT)>, <&kp LS(LEFT)>, <&kp RIGHT>, <&kp LEFT>;
-        tick = <10>;   // 1入力あたりの回転量
+        tick = <5>;   // 1入力あたりの回転量
         tap-ms = <20>;
     };
 };
