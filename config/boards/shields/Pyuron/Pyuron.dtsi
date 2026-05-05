@@ -27,7 +27,6 @@ split_inputs {
         reg = <0>;
       };
     };
-
 /*
     trackball_listener_L: trackball_listener_L {
       compatible = "zmk,input-listener";
@@ -48,15 +47,11 @@ trackball_listener_L: trackball_listener_L {
     /* input-processors はあってもなくても overlay で上書きされます */
 };
 
-/*
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "okay";
+      status = "disabled";
       device = <&trackball_split_R>;
-      input-processors =
-                          <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
-*/
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
