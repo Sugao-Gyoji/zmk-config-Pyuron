@@ -221,14 +221,38 @@
             bindings = <&hold_stap LALT INT5>, <&kp INT4>;
         };
 
-        // シングルタップでシングルクォート、ダブルタップでダブルクォート、長押しで左shift
-
-        td_sft_sq_dq: tap_dance_singlequote_doublequote {
+        // シングルタップでスラッシュ、ダブルタップでアスタリスク、長押しで右shift
+        td_sft_sl_astrk: tap_dance_shift_slash_asterisk {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHT_SQ_DQ";
+            label = "TD_SHT_SL_ASTRK";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&hold_stap LSHIFT SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
+            bindings = <&hold_stap RSHIFT SLASH>, <&kp ASTRK>;
+        };
+
+        // シングルタップでドット、ダブルタップで括弧閉じ、長押しで右alt
+        td_alt_dot_rp: tap_dance_alt_dot_rightpar {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_DOT_RPAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&hold_stap RALT DOT>, <&kp RPAR>;
+        };
+
+        td_co_lp: tap_dance_comma_leftpar {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COMMA_LPAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp COMMA>, <&kp LPAR>;
+        };
+
+        td_sq_dq: tap_dance_singlequote_doublequote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SQ_DQ";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
         };
 
         td_bracket: tap_dance_bracket {
@@ -263,7 +287,7 @@
             bindings = <&kp EXCLAMATION>, <&kp HASH>;
         };
 
-        td_at_amps: tap_at_mps {
+        td_at_amps: tap_at_amps {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AT_AMPS";
             #binding-cells = <0>;
