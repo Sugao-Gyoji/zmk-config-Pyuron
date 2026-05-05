@@ -46,7 +46,8 @@ trackball_listener_L: trackball_listener_L {
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "disabled";
+      status = "okay";
+      device = <&trackball_split_R>;
   //      input-processors =
   //          <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
