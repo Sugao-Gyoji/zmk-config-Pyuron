@@ -221,6 +221,16 @@
             bindings = <&hold_stap LALT INT5>, <&kp INT4>;
         };
 
+        // シングルタップでマイナス、ダブルタップでプラス、長押しで右ctrl
+
+        td_ctl_min_plus: tap_dance_ctrl_minus_plus {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTL_MINUS_PLUS";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&hold_stap RCTRL MINUS>, <&kp PLUS>;
+        };
+
         // シングルタップでスラッシュ、ダブルタップでアスタリスク、長押しで右shift
 
         td_sft_sl_astrk: tap_dance_shift_slash_asterisk {
