@@ -44,49 +44,24 @@
     };
 };
 
-/*
-&zip_mouse_gesture {
-    status = "okay";
-    stroke-size = <100>;
-    idle-timeout-ms = <100>;
-    gesture-cooldown-ms = <300>;
-
-    change_int4 {
-        pattern = <MG_LEFT>;
-        bindings = <&kp INT4>;
-    };
-    change_int5 {
-        pattern = <MG_RIGHT>;
-        bindings = <&kp INT5>;
-    };
-};
-*/
-
-
 / {
     zip_keybind_ime: zip_keybind_ime {
         compatible = "zmk,input-processor-keybind";
         #input-processor-cells = <0>;
         track_remainders;
         mode = <1>; // 4方向モード
-
-        // 上下左右の割り当て
-        // 1: 下（文節を伸長）
-        // 2: 上（文節を短縮）
-        // 3: 右（文節右移動）
-        // 4: 左（文節左移動）
+        // 上下左右の割り当て 1: 下（文節を伸長） 2: 上（文節を短縮） 3: 右（文節右移動） 4: 左（文節左移動）
         bindings = <&kp LS(RIGHT)>, <&kp LS(LEFT)>, <&kp RIGHT>, <&kp LEFT>;
         tick = <5>;   // 1入力あたりの回転量
         tap-ms = <40>;
     };
 };
 
-/* Pyuron.dtsiでスクロールに設定したものをトラックボールマウスに再設定 */
 &trackball_listener_L {
     status = "okay";
         device = <&trackball_split_L>;
-        input-processors = <&zip_scroll_scaler 1 20>,
-                           <&zip_xy_to_scroll_mapper>,
+        input-processors = <&zip_xy_to_scroll_mapper>,
+                           <&zip_scroll_scaler 1 20>,
                            <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     zip_keybind {
         layers = <1>; 
@@ -96,8 +71,8 @@
 
     scroller {
         layers = <6>;
-        input-processors = <&zip_scroll_scaler 1 20>,
-                           <&zip_xy_to_scroll_mapper>, 
+        input-processors = <&zip_xy_to_scroll_mapper>,
+                           <&zip_scroll_scaler 1 20>,
                            <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
                            
     };
@@ -106,8 +81,6 @@
 &trackball_listener_R {
     status = "okay";
     device = <&trackball_R>;
-// 【重要】右側でもマウスを動かすための基本設定を追加
-    // もしこれでも向きが逆なら、ここにある SWAP や INVERT を外すなどして調整します
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
                        <&zip_mouse_gesture>;
     scroller {
