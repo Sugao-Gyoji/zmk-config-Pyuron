@@ -20,17 +20,6 @@
 };
 
 / {
-    /*
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-
-        auto_gesture_on {
-            layers = <0>;
-            bindings = <&mouse_gesture_on &none>;
-        };
-    };
-*/
-
     combos {
         compatible = "zmk,combos";
 
@@ -73,7 +62,6 @@
         };
 
         // 全角：変換キー + IMEレイヤーへ
-
         ime_zen: ime_zen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -81,7 +69,6 @@
         };
 
         // 半角：無変換キー + デフォルトレイヤーへ
-
         ime_han: ime_han {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -201,7 +188,6 @@
         };
 
         // シングルタップと長押しを設定
-
         hold_stap: hold_single_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_SINGLE_TAP";
@@ -212,7 +198,6 @@
         };
 
         // シングルタップでint5、ダブルタップでint4、長押しで左alt
-
         td_alt_int5_4: tap_dance_alt_int5_int4 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_INT5_INT4";
@@ -222,7 +207,6 @@
         };
 
         // シングルタップでマイナス、ダブルタップでプラス、長押しで右ctrl
-
         td_ctl_min_plus: tap_dance_ctrl_minus_plus {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CTL_MINUS_PLUS";
@@ -232,7 +216,6 @@
         };
 
         // シングルタップでスラッシュ、ダブルタップでアスタリスク、長押しで右shift
-
         td_sft_sl_astrk: tap_dance_shift_slash_asterisk {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHT_SL_ASTRK";
@@ -242,7 +225,6 @@
         };
 
         // シングルタップでドット、ダブルタップで括弧閉じ、長押しで右alt
-
         td_alt_dot_rp: tap_dance_alt_dot_rightpar {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_DOT_RPAR";
