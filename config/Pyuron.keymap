@@ -206,7 +206,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_INT5_INT4";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&hold_stap LALT INT5>, <&kp INT4>;
         };
 
@@ -216,7 +216,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CTL_MINUS_PLUS";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&hold_stap RCTRL MINUS>, <&kp PLUS>;
         };
 
@@ -226,7 +226,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHT_SL_ASTRK";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&hold_stap RSHIFT SLASH>, <&kp ASTRK>;
         };
 
@@ -236,7 +236,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_DOT_RPAR";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&hold_stap RALT DOT>, <&kp RPAR>;
         };
 
@@ -244,7 +244,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_COMMA_LPAR";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <&kp LPAR>;
         };
 
@@ -252,7 +252,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SQ_DQ";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
         };
 
@@ -260,7 +260,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BRACKET";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
         };
 
@@ -268,7 +268,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_PAR";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
 
@@ -276,7 +276,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BRACE";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
         };
 
@@ -284,7 +284,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_EXC_HASHE";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp EXCLAMATION>, <&kp HASH>;
         };
 
@@ -292,7 +292,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AT_AMPS";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp AT>, <&kp AMPS>;
         };
 
@@ -300,7 +300,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_DOL_PAR";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp DOLLAR>, <&kp PERCENT>;
         };
 
