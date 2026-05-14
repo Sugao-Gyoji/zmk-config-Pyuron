@@ -304,6 +304,14 @@
             bindings = <&kp DOLLAR>, <&kp PERCENT>;
         };
 
+        td_semi_clon: tap_semicolon_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SEMI_CLON";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SEMICOLON>, <&kp COLON>;
+        };
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
