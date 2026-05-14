@@ -370,9 +370,9 @@
 
         NUM_SYMBOL {
             bindings = <
-&td_exc_hash             &td_sq_dq         &kp UP_ARROW    &td_dol_par      &kp BACKSLASH  &kp INTERNATIONAL_5  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL
+&td_exc_hash             &td_sq_dq         &kp UP_ARROW    &td_dol_par      &td_baks_pipe  &kp INTERNATIONAL_5  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp EQUAL
 &td_at_amps              &kp LEFT_ARROW    &kp DOWN_ARROW  &kp RIGHT_ARROW  &td_bracket    &kp KP_NUMBER_0      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &td_ctl_min_plus
-&mt LEFT_SHIFT CAPSLOCK  &kp GRAVE         &td_semi_clon   &td_par          &td_brace      &trans               &trans           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2
+&mt LEFT_SHIFT CAPSLOCK  &td_grv_tld       &td_semi_clon   &td_par          &td_brace      &trans               &trans           &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2
 &kp KP_NUMBER_3          &td_sft_sl_astrk  &trans          &trans           &trans         &trans               &trans           &trans           &trans           &trans
             >;
         };
