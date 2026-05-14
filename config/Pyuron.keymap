@@ -196,7 +196,7 @@
             label = "HOLD_SINGLE_TAP";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -216,7 +216,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CTL_MINUS_PLUS";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&hold_stap RCTRL MINUS>, <&kp PLUS>;
         };
 
@@ -226,7 +226,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHT_SL_ASTRK";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&hold_stap RSHIFT SLASH>, <&kp ASTRK>;
         };
 
@@ -236,7 +236,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_DOT_RPAR";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&hold_stap RALT DOT>, <&kp RPAR>;
         };
 
@@ -315,7 +315,7 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;    // 500msから200ms程度に下げると快適です
+            tapping-term-ms = <150>;    // 500msから200ms程度に下げると快適です
             quick-tap-ms = <150>;       // 素早い連打を「タップ」として固定
             flavor = "tap-preferred";   // 迷ったら「タップ」を優先する設定
             bindings = <&kp>, <&kp>;
