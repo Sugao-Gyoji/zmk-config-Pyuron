@@ -312,6 +312,22 @@
             bindings = <&kp SEMICOLON>, <&kp COLON>;
         };
 
+        td_grv_tld: tap_grave_tilde {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_GRV_TLD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp GRAVE>, <&kp TILDE>;
+        };
+
+        td_baks_pipe: tap_backslash_pipe {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BAKS_PIPE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp BACKSLASH>, <&kp PIPE>;
+        };
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
